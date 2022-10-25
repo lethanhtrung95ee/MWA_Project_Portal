@@ -15,9 +15,13 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {DetailHouseComponent } from './detail-house/detail-house.component';
 import {MatDividerModule } from '@angular/material/divider';
 import {MatIconModule} from '@angular/material/icon';
-import { AppointmentsComponent } from './appointments/appointments.component';
+import {AppointmentsComponent } from './appointments/appointments.component';
 import {MatListModule} from "@angular/material/list";
 import {MatTableModule} from "@angular/material/table";
+import {MatSliderModule} from '@angular/material/slider';
+import {MatDatepickerModule } from '@angular/material/datepicker';
+import {MatNativeDateModule } from '@angular/material/core';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {ContactAgentDialogComponent} from "./contact-agent-dialog/contact-agent-dialog.component";
 import {MatDialogModule} from "@angular/material/dialog";
 
@@ -39,6 +43,10 @@ import {MatDialogModule} from "@angular/material/dialog";
     MatIconModule,
     CommonModule,
     ReactiveFormsModule,
+    MatSliderModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSnackBarModule,
     RouterModule.forChild([
       {path: "get-all-appointments", component: AppointmentsComponent},
       {path: "search", component: SearchHousesComponent},
@@ -54,7 +62,10 @@ import {MatDialogModule} from "@angular/material/dialog";
     MatTableModule,
     MatDialogModule,
   ],
-  providers: [],
+  providers: [
+    MatDatepickerModule,
+    MatNativeDateModule,
+  ],
   bootstrap: []
 })
 export class HousesModule {

@@ -21,7 +21,7 @@ import { RegisterComponent } from './register/register.component';
 import { MatDividerModule} from '@angular/material/divider';
 import { ProfileComponent } from './profile/profile.component';
 import {MatListModule} from "@angular/material/list";
-
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -46,7 +46,8 @@ import {MatListModule} from "@angular/material/list";
     MatCardModule,
     MatToolbarModule,
     MatDividerModule,
-    MatListModule
+    MatListModule,
+    MatSnackBarModule
   ],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: AddTokenInterceptor, multi: true}],
   bootstrap: [AppComponent]

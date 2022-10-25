@@ -65,7 +65,8 @@ export class DetailHouseComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.viewSub = this.houseService.getDetailHouse(this.houseId)
       .subscribe(house => {
-        this.house = {...house, indexSelected: 0, hasImage:house.images.length !== 0}
+        this.house = {...house, selectedIndex: 0, hasImage:house.images.length !== 0}
+        console.log(this.house)
       })
   }
 

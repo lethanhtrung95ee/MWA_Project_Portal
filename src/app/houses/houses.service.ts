@@ -79,4 +79,20 @@ export class HousesService {
   getAllAppointment(){
     return this.http.get<any>(`${this.BACK_END}houses/appointments`)
   }
+
+  addHouse(obj: { home_number: string, 
+                  street: string,
+                  city: string,
+                  state: string,
+                  yearBuilt: string,
+                  zipCode: string,
+                  bed: number,
+                  bath: number,
+                  garages: number,
+                  square: string,
+                  propertyDetail: string ,
+                  prices: number
+                }) {
+    return this.http.post<{ success: boolean, token: string }>(`${this.BACK_END}houses/`, obj)
+  }
 }

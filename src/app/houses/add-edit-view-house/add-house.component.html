@@ -1,1 +1,106 @@
-<p>add-edit-view-house works!</p>
+<div fxLayoutAlign = "center center" fxFlexFill class="div-main">
+    <mat-card fxFlex="100">
+      <mat-toolbar color="primary">Add New House</mat-toolbar>
+      <form [formGroup]="addHouseForm" (ngSubmit)="addHouse()">
+        <br>
+        <h2>House Detail</h2>
+
+        <mat-form-field appearance="standard">
+          <mat-label>Home Number</mat-label>
+          <input matInput placeholder="Ex: 302" formControlName="home_number">
+          <mat-icon matSuffix>home</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="standard">
+          <mat-label>Street</mat-label>
+          <input matInput placeholder="Ex: 1000 N Street" formControlName="street">
+          <mat-icon matSuffix>home</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="standard">
+          <mat-label>City</mat-label>
+          <input matInput placeholder="Ex: Fairfield" formControlName="city">
+          <mat-icon matSuffix>home</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="standard">
+          <mat-label>State</mat-label>
+          <input matInput placeholder="Ex: Iowa" formControlName="state">
+          <mat-icon matSuffix>home</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="standard">
+          <input matInput [matDatepicker]="myDatePicker" formControlName="yearBuilt"> 
+          <mat-datepicker-toggle [for] ="myDatePicker" matSuffix></mat-datepicker-toggle>
+          <mat-datepicker #myDatePicker startView = "year"></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field appearance="standard">
+          <mat-label>Zip Code</mat-label>
+          <input matInput placeholder="Ex: 52557" formControlName="zipcode">
+          <mat-icon matSuffix>home</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="standard">
+          <mat-label>Number of Bed</mat-label>
+          <input matInput type="number" [(ngModel)]="valueBed" formControlName="bed">
+          <mat-icon matSuffix> local_hotel</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="standard">
+          <mat-label>Number of Bath</mat-label>
+          <input matInput type="number" [(ngModel)]="valueBath" formControlName="bath">
+          <i matSuffix class="fa fa-bath" style="font-size: 20px;"></i>
+        </mat-form-field>
+
+        <mat-form-field appearance="standard">
+          <mat-label>Number of Garage</mat-label>
+          <input matInput type="number" [(ngModel)]="valueGarage" formControlName="garages">
+          <i matSuffix class="fa fa-solid fa-warehouse"></i>
+        </mat-form-field>
+
+
+        <mat-form-field appearance="standard">
+          <mat-label>Squre Feet</mat-label>
+          <input matInput placeholder="Ex: 291029" formControlName="square"> 
+          <mat-icon matSuffix>domain</mat-icon>
+        </mat-form-field>
+        
+        <br>
+        <h2>Price</h2>
+        <mat-slider
+        thumbLabel
+        [displayWith]="formatLabel"
+        tickInterval="1000"
+        step="1000"
+        min="0"
+        max="100000"
+        aria-label="units"></mat-slider>
+        <mat-icon matSuffix> monetization_on</mat-icon>
+
+        <h2>House Overview</h2>
+
+        <mat-form-field class="text_are" appearance="outline">
+          <textarea matInput
+                    placeholder="This is a beautiful house overall..."
+                    cdkTextareaAutosize 
+                    [cdkAutosizeMinRows] = "2"
+                    [cdkAutosizeMaxRows] = "5"
+                    formControlName="propertyDetail"
+          >
+          </textarea>
+        </mat-form-field>
+
+        <h2>Upload House Image</h2>
+        <button mat-stroked-button>Choose files</button>
+
+        <br>
+        <button mat-raised-button type="submit" color="primary" 
+        class="btn_add"
+        (click)="addHouse()"
+        >
+          Add House
+        </button>
+      </form>
+    </mat-card>
+  </div>
