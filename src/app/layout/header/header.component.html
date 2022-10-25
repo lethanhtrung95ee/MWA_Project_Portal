@@ -2,7 +2,7 @@
   <mat-toolbar>
     <div id="nav-container">
       <div *ngIf="state.role === 'user'">
-        <a mat-button><img src="../../../assets/img/logo.jpg" style="height: 3.6rem" /> </a>
+        <a mat-button [routerLink]="['/', 'houses','search']"><img src="../../../assets/img/logo.jpg" style="height: 3.6rem" /> </a>
         <a mat-button [routerLink]="['/', 'houses','search']">Search Houses</a>
         <a mat-button [routerLink]="['/', 'profile']">My Profile</a>
       </div>

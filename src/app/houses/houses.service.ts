@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {environment} from "../../environments/environment";
 
 function dynamicQuery(obj: {
   homeNumber: string; street: string; city: string; state: string; zipcode: string;
@@ -56,8 +57,6 @@ function dynamicQuery(obj: {
   providedIn: 'root'
 })
 export class HousesService {
-  private BACK_END = `http://localhost:8080/`
-
 
   constructor(private http: HttpClient) {
   }
@@ -69,18 +68,18 @@ export class HousesService {
     page:string, owner: string
   }) {
     const result = dynamicQuery(obj)
-    return this.http.get<any>(`${this.BACK_END}houses/search${result}`)
+    return this.http.get<any>(`${environment.apiUrl}/houses/search${result}`)
   }
 
   getDetailHouse(_id: string) {
-    return this.http.get<any>(`${this.BACK_END}houses/${_id}`)
+    return this.http.get<any>(`${environment.apiUrl}/houses/${_id}`)
   }
 
   getAllAppointment(){
-    return this.http.get<any>(`${this.BACK_END}houses/appointments`)
+    return this.http.get<any>(`${environment.apiUrl}/houses/appointments`)
   }
 
-  addHouse(obj: { home_number: string, 
+  addHouse(obj: { home_number: string,
                   street: string,
                   city: string,
                   state: string,
@@ -93,6 +92,6 @@ export class HousesService {
                   propertyDetail: string ,
                   prices: number
                 }) {
-    return this.http.post<{ success: boolean, token: string }>(`${this.BACK_END}houses/`, obj)
+    return this.http.post<{ success: boolean, token: string }>(`${environment.apiUrl}/houses/`, obj)
   }
 }

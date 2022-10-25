@@ -24,6 +24,7 @@ import {MatNativeDateModule } from '@angular/material/core';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {ContactAgentDialogComponent} from "./contact-agent-dialog/contact-agent-dialog.component";
 import {MatDialogModule} from "@angular/material/dialog";
+import {MaterialUIModule} from "../materialUI.module";
 
 @NgModule({
   declarations: [
@@ -35,18 +36,8 @@ import {MatDialogModule} from "@angular/material/dialog";
     ContactAgentDialogComponent
   ],
   imports: [
-    MatDividerModule,
-    MatCheckboxModule,
-    FlexLayoutModule,
-    MatInputModule,
-    MatToolbarModule,
-    MatIconModule,
     CommonModule,
     ReactiveFormsModule,
-    MatSliderModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatSnackBarModule,
     RouterModule.forChild([
       {path: "get-all-appointments", component: AppointmentsComponent},
       {path: "search", component: SearchHousesComponent},
@@ -54,13 +45,7 @@ import {MatDialogModule} from "@angular/material/dialog";
       {path: "edit/:id", component: EditHouseComponent},
       {path: "view/:id", component: DetailHouseComponent}
     ]),
-    MatCardModule,
-    MatPaginatorModule,
-    MatButtonModule,
-    FormsModule,
-    MatListModule,
-    MatTableModule,
-    MatDialogModule,
+    MaterialUIModule
   ],
   providers: [
     MatDatepickerModule,
