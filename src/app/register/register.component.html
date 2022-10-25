@@ -1,0 +1,33 @@
+<mat-card>
+  <mat-card-content>
+    <form [formGroup]="registerForm" (submit)="submit()">
+      <h2>Register</h2>
+      <mat-form-field class="full-width-input">
+        <input matInput placeholder="Full Name" formControlName="fullName" required>
+      </mat-form-field>
+      <mat-form-field class="full-width-input">
+        <input matInput type="email" placeholder="Email" formControlName="email" required>
+      </mat-form-field>
+      <mat-form-field class="full-width-input">
+        <input matInput placeholder="Phone Number" formControlName="phoneNumber" required>
+      </mat-form-field>
+      <mat-form-field class="full-width-input">
+        <input matInput placeholder="User Id" formControlName="userId" required>
+      </mat-form-field>
+      <mat-form-field class="full-width-input">
+        <input matInput type="password" placeholder="Enter Password" formControlName="password" required>
+      </mat-form-field>
+      <mat-form-field class="full-width-input">
+        <input matInput type="password" placeholder="Re-Type Password" formControlName="password" required>
+      </mat-form-field>
+      <button style="width:100%"mat-raised-button color="primary">Register</button>
+    </form>
+  </mat-card-content>
+</mat-card>
+<div style="
+  display:flex;
+  align-items: center;
+  justify-content: center;">
+  <button (click)="back()" style="width:34%" mat-raised-button color="primary">Back to login page</button>
+</div>
+

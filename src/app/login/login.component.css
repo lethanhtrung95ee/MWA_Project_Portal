@@ -1,0 +1,22 @@
+.div-main mat-card {
+    padding: 0px;
+}
+.login-form {
+    padding: 20px;
+}
+.mat-caption {
+    margin-top: 10px;
+}
+
+#search-result {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+#house-result {
+  width: 30%;
+  overflow-y: scroll;
+  max-height: 51rem;
+  margin-bottom: 8rem;
+}

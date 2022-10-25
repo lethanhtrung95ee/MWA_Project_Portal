@@ -1,0 +1,77 @@
+<div class="container">
+  <div class="carousel-container" *ngIf="house.hasImage else unfound_house">
+    <img *ngFor="let image of house.images, let i = index "
+         src='assets/img/houses/{{image}}'
+         [ngClass]="{'image-active': house.selectedIndex === i}"
+         class="fade"/>
+    <div class="carousel-dot-container">
+            <span *ngFor="let dot of house.images, let i = index "
+                  class="dot"
+                  [ngClass]="{'active': house.selectedIndex === i}"
+                  (click)="selectImage(i)"
+            ></span>
+    </div>
+    <div class="btn-carousel btn-prev">
+      <i class="fas fa-arrow-circle-left icon-carousel icon-prev"
+         (click)="onPrevClick()"
+      ></i>
+    </div>
+    <div class="btn-carousel btn-next">
+      <i class="fas fa-arrow-circle-right icon-carousel icon-next"
+         (click)="onNextClick()"
+      ></i>
+    </div>
+  </div>
+  <ng-template #unfound_house>
+    <img class="images" src='assets/img/houses/house-cannot-found.png'/>
+  </ng-template>
+  <div class="under-image">
+    <h3>
+      {{house.address.home_number}}
+      {{house.address.street}}
+      {{house.address.city}}
+      {{house.address.state}}
+      {{house.address.zipcode}}
+    </h3>
+    <h1><b> ${{house.description.prices}}</b></h1>
+  </div>
+
+  <mat-divider></mat-divider>
+
+  <div class="overview">
+    <h1><b>Overview</b></h1>
+    <p>
+      {{house.description.propertyDetail}}
+    </p>
+  </div>
+  <div class="fact_about_house">
+    <mat-toolbar color="primary">Facts and Features</mat-toolbar>
+    <ul class="list_icon">
+      <mat-icon>home</mat-icon>
+      <p mat-line>Single family residence</p>
+    </ul>
+    <ul class="list_icon">
+      <mat-icon>today</mat-icon>
+      <p mat-line>Built in {{house.description.yearBuilt}}</p>
+    </ul>
+    <ul class="list_icon">
+      <mat-icon>domain</mat-icon>
+      <p mat-line>{{house.description.square}} sqft</p>
+    </ul>
+    <ul class="list_icon">
+      <i style="color: blue;" class="fa fa-bath"></i>
+      <p mat-line>{{house.description.bath}} </p>
+    </ul>
+    <ul class="list_icon">
+      <i style="color: blue;" class="fa fa-bed"></i>
+      <p mat-line>{{house.description.bed}} </p>
+    </ul>
+    <ul class="list_icon">
+      <i style="color: blue;" class="fa fa-solid fa-warehouse"></i>
+      <p mat-line>{{house.description.garages}} </p>
+    </ul>
+    <button mat-raised-button (click)="openDialog()">Contact Agent</button>
+  </div>
+</div>
+
+

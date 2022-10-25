@@ -1,0 +1,24 @@
+<header *ngIf="state.role !== ''">
+  <mat-toolbar>
+    <div id="nav-container">
+      <div *ngIf="state.role === 'user'">
+        <a mat-button><img src="../../../assets/img/logo.jpg" style="height: 3.6rem" /> </a>
+        <a mat-button [routerLink]="['/', 'houses','search']">Search Houses</a>
+        <a mat-button [routerLink]="['/', 'profile']">My Profile</a>
+      </div>
+
+      <div *ngIf="state.role === 'agent'">
+        <a mat-button [routerLink]="['/', 'houses','search']"><img src="../../../assets/img/logo.jpg" style="height: 3.6rem" /> </a>
+        <a mat-button [routerLink]="['/', 'houses','search']">Search Houses</a>
+        <a mat-button [routerLink]="['/', 'houses', 'add']">Add new house</a>
+        <a mat-button [routerLink]="['/', 'houses', 'get-all-appointments']">All appointments</a>
+        <a mat-button [routerLink]="['/', 'profile']">My profile</a>
+      </div>
+      <div class="welcome">
+        <a mat-button [routerLink]="['/', 'profile']">Welcome, {{state.fullName}}!</a>
+        <a mat-button color="warn" (click)="logout()">Logout</a>
+      </div>
+
+    </div>
+  </mat-toolbar>
+</header>

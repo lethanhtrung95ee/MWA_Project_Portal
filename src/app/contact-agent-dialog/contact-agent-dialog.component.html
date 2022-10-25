@@ -1,0 +1,26 @@
+<h3 mat-dialog-title>Contact Agent:</h3>
+<div mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Full Name</mat-label>
+    <input matInput [(ngModel)]="contactInfo.name">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Phone</mat-label>
+    <input matInput [(ngModel)]="contactInfo.phone">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Email</mat-label>
+    <input matInput [(ngModel)]="contactInfo.email">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Message</mat-label>
+    <input matInput [(ngModel)]="contactInfo.message">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancelClick()">Cancel</button>
+  <button mat-button [mat-dialog-close]="contactInfo" cdkFocusInitial>Send</button>
+</div>
