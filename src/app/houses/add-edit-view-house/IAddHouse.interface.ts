@@ -1,20 +1,20 @@
 export default interface IAddHouse{
-    
+
     address: {
-        home_number: number,
+        home_number: string,
         street: string,
         city: string,
         state: string,
-        zipcode: number
+        zipcode: string
     },
     description: {
-        square: number,
-        prices: number,
-        bed: number,
-        bath: number,
+        square: string,
+        prices: string,
+        bed: string,
+        bath: string,
         propertyDetail: string,
-        yearBuilt: number,
-        garages: number
+        yearBuilt: string,
+        garages: string
     },
     images: [string],
     interestingUserIds: [string],

@@ -46,31 +46,50 @@
   </div>
   <div class="fact_about_house">
     <mat-toolbar color="primary">Facts and Features</mat-toolbar>
-    <ul class="list_icon">
+    <div class="list_icon">
       <mat-icon>home</mat-icon>
       <p mat-line>Single family residence</p>
-    </ul>
-    <ul class="list_icon">
+    </div>
+    <div class="list_icon">
       <mat-icon>today</mat-icon>
       <p mat-line>Built in {{house.description.yearBuilt}}</p>
-    </ul>
-    <ul class="list_icon">
+    </div>
+    <div class="list_icon">
       <mat-icon>domain</mat-icon>
       <p mat-line>{{house.description.square}} sqft</p>
-    </ul>
-    <ul class="list_icon">
-      <i style="color: blue;" class="fa fa-bath"></i>
+    </div>
+    <div class="list_icon">
+      <i class="fa fa-bath"></i>
       <p mat-line>{{house.description.bath}} </p>
-    </ul>
-    <ul class="list_icon">
+    </div>
+    <div class="list_icon">
       <mat-icon matSuffix> local_hotel</mat-icon>
       <p mat-line>{{house.description.bed}} </p>
-    </ul>
-    <ul class="list_icon">
-      <i style="color: blue;" class="fa fa-solid fa-warehouse"></i>
+    </div>
+    <div class="list_icon">
+      <i class="fa fa-solid fa-warehouse"></i>
       <p mat-line>{{house.description.garages}} </p>
-    </ul>
-    <button mat-raised-button (click)="openDialog()">Contact Agent</button>
+    </div>
+
+    <div *ngIf="role === 'agent'">
+      <button mat-raised-button 
+      color="accent" 
+      (click)="editHouse(house._id)"
+      class="btn-edit"
+    >
+      Edit House
+    </button>
+    </div>
+
+    <div *ngIf="role === 'user'">
+      <button mat-raised-button 
+      color="primary" 
+      (click)="openDialog()"
+      class="btn-contact-agent"
+    >
+      Contact Agent
+    </button>
+    </div>
   </div>
 </div>
 

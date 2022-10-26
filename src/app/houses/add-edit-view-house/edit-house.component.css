@@ -1,0 +1,17 @@
+mat-form-field, h2, mat-slider, .img_upload  {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+mat-slider {
+    width: 300px;
+}
+
+.btn_edit {
+    margin:0 auto;
+    display:block;
+}
+
+.text_are {
+    width: 100%;
+}

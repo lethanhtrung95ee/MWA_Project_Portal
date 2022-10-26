@@ -15,7 +15,7 @@
 .carousel-container img.image-active {
     display: block;
     width: 100%;
-    height: 400px;
+    height: 600px;
 }
 .carousel-dot-container {
     position: absolute;
@@ -128,9 +128,19 @@ mat-divider {
 
 
 .mat-icon {
-    font-size: 20px;
+    font-size: 25px;
     color: blue;
     float: left;
+}
+
+.list_icon {
+    margin-top: 15px;
+    margin-left: 35px;
+}
+
+i {
+    font-size: 20px;
+    color: blue;
 }
 
 .list_icon p {
@@ -145,4 +155,14 @@ mat-divider {
 
 .btn-next{
   right: 0
+}
+
+.btn-contact-agent, .btn-edit {
+    margin: 0 auto;
+    display: block;
+    margin-top: 15px;
+}
+
+.container {
+    padding-bottom: 50px;
 }
